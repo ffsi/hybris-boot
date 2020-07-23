@@ -206,6 +206,20 @@ case "$DEVICE" in
             "$@"
         ;;
 
+    "falcon")
+        sed -i \
+            -e 's block/bootdevice/by-name/fsg mmcblk0p21 ' \
+            -e 's block/bootdevice/by-name/modem mmcblk0p1 ' \
+            -e 's block/bootdevice/by-name/persist mmcblk0p29 ' \
+            -e 's block/bootdevice/by-name/userdata mmcblk0p36 ' \
+            -e 's block/bootdevice/by-name/system mmcblk0p34 ' \
+            -e 's block/bootdevice/by-name/cache mmcblk0p33 ' \
+            -e 's block/bootdevice/by-name/recovery mmcblk0p32 ' \
+            -e 's block/bootdevice/by-name/pds mmcblk0p26 ' \
+            -e 's block/bootdevice/by-name/boot mmcblk0p31 ' \
+            "$@"
+        ;;
+
     "thea")
         sed -i \
             -e 's block/platform/msm_sdcc.1/by-name/fsg mmcblk0p22 ' \
